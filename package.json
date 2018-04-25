@@ -8,5 +8,13 @@
     "ganache-cli": "^6.1.0",
     "truffle": "^4.1.7",
     "zeppelin-solidity": "^1.8.0"
+  },
+  "scripts": {
+    "ganache.cli": "ganache-cli",
+    "ganache.gui": "/Applications/Ganache.app/Contents/MacOS/ganache & disown",
+    "truffle.console": "truffle console",
+    "truffle.migrate": "truffle migrate",
+    "truffle.test": "truffle test",
+    "wallet": "\/Applications\/Ethereum\\ Wallet.app\/Contents\/MacOS\/Ethereum\\ Wallet --rpc \"http:\/\/127.0.0.1:8545\" & disown",
   }
 }
