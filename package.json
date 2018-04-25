@@ -1,8 +1,8 @@
 {
   "name": "erc20",
   "version": "1.0.0",
-  "repository": "git@github.com:scottchu/erc20.git"
-  "author": "Scott Chu",
+  "repository": "git@github.com:scottchu/erc20.git",
+  "author": "ScottChu",
   "license": "MIT",
   "devDependencies": {
     "ganache-cli": "^6.1.0",
@@ -11,10 +11,10 @@
   },
   "scripts": {
     "ganache.cli": "ganache-cli",
-    "ganache.gui": "/Applications/Ganache.app/Contents/MacOS/ganache & disown",
+    "ganache.gui": "\/Applications\/Ganache.app\/Contents\/MacOS\/ganache </dev/null &>/dev/null &",
     "truffle.console": "truffle console",
     "truffle.migrate": "truffle migrate",
     "truffle.test": "truffle test",
-    "wallet": "\/Applications\/Ethereum\\ Wallet.app\/Contents\/MacOS\/Ethereum\\ Wallet --rpc \"http:\/\/127.0.0.1:8545\" & disown",
+    "wallet": "\/Applications\/Ethereum\\ Wallet.app\/Contents\/MacOS\/Ethereum\\ Wallet --rpc \"http:\/\/127.0.0.1:8545\" </dev/null &>/dev/null &"
   }
 }
