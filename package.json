@@ -1,6 +1,12 @@
 {
   "name": "erc20",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "repository": "git@github.com:scottchu/erc20.git"
+  "author": "Scott Chu",
+  "license": "MIT",
+  "devDependencies": {
+    "ganache-cli": "^6.1.0",
+    "truffle": "^4.1.7",
+    "zeppelin-solidity": "^1.8.0"
+  }
 }
