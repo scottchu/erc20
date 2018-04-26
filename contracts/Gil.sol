@@ -1,5 +1,8 @@
 pragma solidity ^0.4.23;
 
+// ====================================
+// Import Templates
+// ====================================
 import "zeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
 
 contract Gil is StandardToken {
