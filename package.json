@@ -14,6 +14,7 @@
     "ganache.gui": "/Applications/Ganache.app/Contents/MacOS/ganache </dev/null &>/dev/null &",
     "ganache.wallet": "/Applications/Ethereum\\ Wallet.app/Contents/MacOS/Ethereum\\ Wallet --rpc \"http://127.0.0.1:7545\" </dev/null &>/dev/null &",
     "truffle.console": "truffle console",
+    "truffle.debug": "truffle debug",
     "truffle.migrate": "truffle migrate",
     "truffle.test": "truffle test",
     "start.ganache": "yarn ganache.gui && yarn ganache.wallet"
