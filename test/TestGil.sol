@@ -13,7 +13,7 @@ contract TestGil {
     Assert.equal(token.totalSupply(), expected, "total supply equals initialSupply");
   }
 
-  function testBalanceOfOwnerOnStart() {
+  function testBalanceOfOwnerOnStart() public {
     uint initialSupply = 999;
     Gil token = new Gil(initialSupply);
 
