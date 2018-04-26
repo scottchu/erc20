@@ -2,10 +2,10 @@ pragma solidity ^0.4.23;
 
 import "truffle/Assert.sol";
 import "../contracts/Gil.sol";
-import "../contracts/TimeLock.sol";
+import "../contracts/Timelock.sol";
 import "./utils/ThrowProxy.sol";
 
-contract TestTimeLock {
+contract TestTimelock {
   event Foo(uint x, uint y);
 
   function testInitialize() public {
@@ -15,7 +15,7 @@ contract TestTimeLock {
     address beneficiary = address(1);
     uint duration = 100 seconds;
 
-    TimeLock lock = new TimeLock(token, beneficiary, duration);
+    Timelock lock = new Timelock(token, beneficiary, duration);
 
     Assert.equal(lock.releaseTime(), now + duration,
       "release time is set correctly");
@@ -34,11 +34,11 @@ contract TestTimeLock {
     address beneficiary = address(1);
     uint duration = 100 days;
 
-    TimeLock lock = new TimeLock(token, beneficiary, duration);
+    Timelock lock = new Timelock(token, beneficiary, duration);
 
     ThrowProxy proxy = new ThrowProxy(address(lock));
 
-    TimeLock(address(proxy)).release();
+    Timelock(address(proxy)).release();
 
     bool output = proxy.execute.gas(200000)();
 

@@ -2,7 +2,7 @@ import "zeppelin-solidity/contracts/token/ERC20/TokenTimelock.sol";
 
 import "./Gil.sol";
 
-contract TimeLock is TokenTimelock {
+contract Timelock is TokenTimelock {
 
   uint256 public duration;
 
