@@ -12,11 +12,15 @@
   "scripts": {
     "ganache.cli": "ganache-cli",
     "ganache.gui": "/Applications/Ganache.app/Contents/MacOS/ganache </dev/null &>/dev/null &",
-    "ganache.wallet": "/Applications/Ethereum\\ Wallet.app/Contents/MacOS/Ethereum\\ Wallet --rpc \"http://127.0.0.1:7545\" </dev/null &>/dev/null &",
     "truffle.console": "truffle console",
     "truffle.debug": "truffle debug",
     "truffle.migrate": "truffle migrate",
+    "truffle.migrate.reset": "rm -rf build",
     "truffle.test": "truffle test",
-    "start.ganache": "yarn ganache.gui && yarn ganache.wallet"
+    "truffle.dev": "yarn truffle.migrate.reset && yarn truffle.migrate",
+    "wallet.reset": "rm -rf /Users/scottchu/Library/Application\\ Support/Ethereum\\ Wallet/*",
+    "wallet.start": "/Applications/Ethereum\\ Wallet.app/Contents/MacOS/Ethereum\\ Wallet --rpc \"http://127.0.0.1:7545\" </dev/null &>/dev/null &",
+    "wallet.dev": "yarn wallet.reset && yarn wallet.start",
+    "start.dev": "yarn ganache.gui && yarn truffle.dev && yarn wallet.dev"
   }
 }
