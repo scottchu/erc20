@@ -1,23 +1,28 @@
 const FireSale = artifacts.require("./FireSale.sol")
 const Gil = artifacts.require("./Gil.sol")
 
-module.exports = (deployer, network, accounts) => {
-  const rate = new web3.BigNumber(1)
+const { BigNumber } = web3
+
+module.exports = async function(deployer, network, accounts) {
+  // set the exchange rate between ETH and GIL
+  const rate = new BigNumber(1)
+
+  // use first account as wallet
   const wallet = accounts[0]
 
-  const tokenQ = Gil
-    .deployed()
+  // get the deployed Gil instance
+  const token = await Gil.deployed()
 
-  const amountQ = tokenQ
-    .then((token) => token.balanceOf(wallet))
+  // get the balance of the wallet account
+  const amount = await token.balanceOf(wallet)
 
-  const crowdsaleQ = deployer
-    .then(() => FireSale.new(rate, wallet, Gil.address))
-    .then(crowdsale => {
-      Promise
-        .all([tokenQ, amountQ])
-        .then(([token, amount]) => {
-            token.transfer(crowdsale.address, amount)
-        })
-    })
+  // deploy the FireSale contract
+  await deployer.deploy(FireSale, rate, wallet, Gil.address)
+
+  // get the deployed FireSale instance
+  const crowdsale = await FireSale.deployed()
+
+  // // transfer amount of tokens from master account
+  // // to the crowdsale account
+  await token.transfer(crowdsale.address, amount)
 }
